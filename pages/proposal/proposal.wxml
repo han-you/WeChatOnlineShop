@@ -1,0 +1,7 @@
+<view class="container">  
+  <view class="input-wrapper">  
+    <textarea class="input" placeholder="请输入内容" bindinput="handleInput" maxlength="100"></textarea>  
+  </view>  
+  <view class="word-count">{{wordCount}}/200</view>  
+  <view class="submit" bind:tap="handleSubmit" >提交</view>
+</view>

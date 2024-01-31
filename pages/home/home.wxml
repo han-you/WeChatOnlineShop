@@ -1,0 +1,43 @@
+<view class="Home">
+  <!-- 搜索行开始 -->
+  <SearchInput></SearchInput>
+  <!-- 搜索行结束 -->
+  <!-- 轮播图开始 -->
+ <view class="Home_Swiper">
+  <swiper autoplay indicator-dots circular>
+  <swiper-item 
+  wx:for="{{swiperList}}"
+  >
+    <navigator>
+    <image src="{{item}}" mode="widthFix"/> //填对应的url
+    </navigator>
+  </swiper-item>
+</swiper>
+</view>
+  <!-- 轮播图结束 -->
+  <!-- 时尚趋势开始 -->
+  <view class="inline">
+    <image src="../../images/fire.png" />
+    <text>时尚趋势</text>
+  </view>
+  <!-- 时尚趋势结束 -->
+  <!-- 楼层开始 -->
+<view class="index_floor">
+    <view class="thum" wx:for="{{floorList}}">
+      <navigator url="/pages/goods_detail/goods_detail?good_id={{item.good_id}}">
+        <image src="{{item.imagePath}}"/>
+        <view class="txt">
+          <view class="name">
+            <image src="../../images/hot.png" mode="widthFix" />
+            <text>{{item.good_name}}</text>
+          </view>
+          <view class="price">
+            <image src="../../images/price.png" />
+            <text>{{item.price}}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 楼层结束 -->
+</view>

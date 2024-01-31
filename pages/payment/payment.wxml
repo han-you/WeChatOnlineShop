@@ -1,0 +1,29 @@
+<!--pages/payment/payment.wxml-->
+<view container-wrap>
+  <!-- 商品清单 -->
+  <view class="title-wrap">订单</view>
+  <view class="goods-wrap">
+    <view class="goods" wx:for="{{payList}}">
+      <image src="{{item.imagePath}}" mode="widthFix" />
+      <view class="message">
+        <view class="good_name">{{item.goodName}}</view>
+        <view class="price_num">
+          <view class="price">￥{{item.price}}</view>
+          <view class="num">x{{item.buy_num}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部支付框 -->
+  <view class="foot-bar">
+    <!-- 总价 -->
+    <view class="total-price-wrap">
+      <view>合计：</view>
+      <view class="price">￥{{totalPrice}}</view>
+    </view>
+    <!-- 结算 -->
+    <view class="order-pay-wrap" bind:tap="destoryStorage">
+      <navigator url="/pages/home/home" open-type="switchTab">支付({{goodNum}})</navigator>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,55 @@
+<!--pages/goods_detail/goods_detail.wxml-->
+<view class="container1">
+  <!-- 轮播图开始 -->
+  <swiper autoplay indicator-dots circular>
+    <swiper-item wx:for="{{goodsObj.imagePaths}}" class="goods_item">
+      <image src="{{item}}" />
+    </swiper-item>
+  </swiper>
+  <view class="description">
+    {{goodsObj.description}}
+  </view>
+  <view class="price">
+    ￥{{goodsObj.prices}}
+  </view>
+  <view class="message">
+    <view class="sold">销量：{{goodsObj.sold}}</view>
+    <view class="left">库存：{{goodsObj.left}}</view>
+  </view>
+  <view class="buy">
+    <view class="add" bind:tap="addnum">
+      <image src="../../images/加.png" />
+    </view>
+    <view>{{buy_num}}</view>
+    <view class="cut" bind:tap="cutnum">
+      <image src="../../images/减.png" />
+    </view>
+  </view>
+  <view class="btn_tool">
+    <view class="item_tool">
+      <view class="iconfront_icon-home">
+        <navigator url="/pages/home/home" open-type="switchTab">
+          <image src="../../images/homeicon_unselected.png" />
+          <text>首页</text>
+        </navigator>
+
+      </view>
+
+    </view>
+    <view class="item_tool">
+      <view class="iconfront_icon-shoppingcart">
+        <navigator url="/pages/cart/cart" open-type="switchTab">
+          <image src="../../images/shoppingtrolley_unselected.png" />
+          <text>购物车</text>
+        </navigator>
+      </view>
+
+    </view>
+    <view class="item_tool_btncart" bind:tap="add_cart">
+      <view>加入购物车</view>
+    </view>
+    <view class="item_tool_btnbuy" bind:tap="addToStorage">
+        <view>立即购买</view>
+    </view>
+  </view>
+</view>

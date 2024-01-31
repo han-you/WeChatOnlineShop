@@ -1,0 +1,27 @@
+<view class="user_info_wrap">
+  <view class="user_img_wrap">
+    <image src="{{userInfo.imagePath}}" class="user_bg" />
+    <view class="user_info">
+      <image src="{{userInfo.imagePath}}" class="user_icon" />
+      <view class="user_name">{{userInfo.name}}</view>
+    </view>
+  </view>
+  <view class="fulfill"> </view>
+  <view class="functions">
+    <view class="order">
+      <navigator url="/pages/order/order" open-type="navigate">
+        我的订单
+      </navigator>
+    </view>
+    <view class="proposal">
+      <navigator url="/pages/proposal/proposal">
+        意见反馈
+      </navigator>
+    </view>
+    <view class="changeUserInfo"> 
+       <!-- 改成修改用户的界面路径 -->
+   <navigator url="/pages/change/change">修改账户信息</navigator></view>
+
+    <view class="cancel" bind:tap="cancel">注销</view>
+  </view>
+</view>

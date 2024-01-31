@@ -1,0 +1,75 @@
+<!--pages/order/order.wxml-->
+<view class="container1">
+  <view class="unpayed">
+    <text>未支付</text>
+    <view class="DeliverItem" wx:for="{{unpayed_item_list}}">
+      <!-- 商品信息 -->
+      <view class="goods">
+        <image src="{{item.imagePath}}" />
+        <view class="message">
+          <view class="introduction">
+            {{item.good_introduction}}
+          </view>
+          <view class="price_num">
+            <view class="price">￥{{item.price}}</view>
+            <view class="buy_num">
+              <view> x{{item.buy_num}}</view>
+            </view>
+            <view class="cancel_btn" data-order_id="{{item.order_id}}" bind:tap="onCancel">
+            取消订单
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="undeliver">
+    <text>待发货</text>
+    <view class="UndeliverItem" wx:for="{{undeliver_item_list}}">
+      <image src="{{item.imagePath}}" />
+      <view class="message">
+        <view class="introduction">
+          {{item.good_introduction}}
+        </view>
+        <view class="price_num">
+          <view class="price">￥{{item.price}}</view>
+          <view class="buy_num">
+            <view> x{{item.buy_num}}</view>
+          </view>
+          <view class="reminder">
+            <view bind:tap="onReminder">催单</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="deliver">
+    <text>已发货</text>
+    <view class="DeliverItem" wx:for="{{deliver_item_list}}">
+      <!-- 商品信息 -->
+      <view class="goods">
+        <image src="{{item.imagePath}}" />
+        <view class="message">
+          <view class="introduction">
+            {{item.good_introduction}}
+          </view>
+          <view class="price_num">
+            <view class="price">￥{{item.price}}</view>
+            <view class="buy_num">
+              <view> x{{item.buy_num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 快递单号 -->
+      <view class="DeliverMessage">
+        <view>{{item.deliver_id}}</view>
+        <view class="SignFor">
+          <view wx:if="{{item.sign_for_status}}">已签收</view>
+          <view wx:else bind:tap="signFor" data-order_id="{{item.order_id}}">确认签收</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

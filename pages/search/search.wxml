@@ -1,0 +1,28 @@
+<!--pages/search/search.wxml-->
+<!-- 搜索框 -->
+<view class="search_row">
+<input type="text" placeholder="请输入您要搜索的商品" bindinput="handleInput"/>
+<button bind:tap="search_tap">搜索</button>
+</view>
+<!-- 总的内容 -->
+<view class="tabs">
+  <!-- 销量等表头 -->
+  <view class="tabs_title">
+    <view bind:tap="handleItemTab" data-index="{{index}}" wx:for="{{tabs}}" wx:key="id" class="title_item {{item.isActive?'active':''}}">
+      {{item.value}}
+    </view>
+  </view>
+  <!-- 具体排序 -->
+  <view class="tabs_content">
+  <scroll-view scroll-y="true" style="height:calc(100vh)">
+  <navigator class="item" wx:for="{{ currentItemsList}}" url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
+  <image src="{{item.imagePath}}" mode="widthFix"/>
+  <view class="text">
+  <view class="introduction">{{item.text}}</view>
+  <view class="store">{{item.store}}</view>
+  </view>
+  </navigator>
+    
+  </scroll-view>
+  </view>
+</view>

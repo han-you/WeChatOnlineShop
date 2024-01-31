@@ -1,0 +1,47 @@
+.container {  
+  display: flex;  
+  flex-direction: column;  
+  height: 100vh;  
+}  
+  
+.input-wrapper {  
+  display: flex;  
+  flex-direction: column;  
+  justify-content: center;  
+  align-items: center;  
+  height: 80%;  
+  width: 80%;  
+  margin: 0 auto;  
+}  
+  
+.input {  
+  width: 100%;  
+  min-height: 40px;  
+  padding: 0 10px;  
+  border: 1px solid #ccc;  
+  border-radius: 4px;  
+  font-size: 16px;  
+  resize: none;  
+  overflow: hidden;  
+  word-wrap: break-word;  
+  position: relative;  
+  z-index: 999;  
+  padding-bottom: 20px;  
+  align-self: flex-start; /* 使 textarea 置于 input-wrapper 的顶部 */  
+}  
+  
+.word-count {  
+  height: 20%;  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  font-size: 16px;  
+}
+.submit{
+  background-color: #fd5632;
+  width:400rpx;
+  height:100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 40rpx;
+}

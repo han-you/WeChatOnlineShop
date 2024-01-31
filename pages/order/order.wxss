@@ -1,0 +1,76 @@
+/* pages/order/order.wxss */
+.cancel_btn{
+  font-size: 30rpx;
+  background-color: #fcebca;
+  border-radius: 16rpx;
+}
+
+.unpayed text{
+  color:#fbd0b0;
+  font-size: 40rpx;
+}
+.undeliver text{
+  color:#fbd0b0;
+  font-size: 40rpx;
+}
+.deliver text{
+  font-size:40rpx;
+  color:#fbd0b0;
+}
+.UndeliverItem{
+  display:flex;
+  width: 100%;
+  height:200rpx;
+  margin-top: 10rpx;
+}
+.UndeliverItem image{
+height:200rpx;
+
+}
+.message{
+  display: flex;
+}
+.message .introduction{
+  flex:3;
+}
+.message .price_num{
+flex:1;
+}
+.buy_num{
+  height:100rpx;
+  font-size:30rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.reminder{
+  background-color: #fcebca;
+  text-align: center;
+  border-radius: 20rpx;
+}
+.goods{
+  display:flex;
+}
+.UndeliverItem{
+  display:flex;
+  width: 100%;
+  height:220rpx;
+  margin-top: 10rpx;
+}
+.DeliverItem image{
+  height:200rpx;
+  }
+  .DeliverMessage{
+    display: flex;
+  }
+.SignFor{
+  width:100%;
+    display:flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+.SignFor view{
+  background-color: #fcebca;
+  border-radius: 20rpx;
+}

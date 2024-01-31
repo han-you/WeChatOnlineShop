@@ -1,0 +1,95 @@
+/* pages/cart/cart.wxss */
+.containercart{
+  height:100vh;
+}
+.goods{
+  border-bottom:1rpx solid grey;
+  display:flex;
+}
+.goods_pic {
+flex:2;
+}
+.name{
+  height:30%;
+  display: flex;
+  align-items: center;
+}
+.fashion{
+  height:30%;
+  display: flex;
+}
+.fashion view{
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+}
+.fashion image{
+  margin-top: 20rpx;
+
+  height:40rpx;
+  width:40rpx;
+}
+.price{
+  height:40%;
+  display: flex;
+  align-items:center;
+  font-size:40rpx;
+  color: red;
+}
+.message{
+  flex:4;
+}
+.buy_num{
+  margin-left: 25rpx;
+}
+.cart_chk_wrap{
+  flex:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_tool{
+  border-top: 1rpx solid #ccc;
+  position: fixed;
+  bottom: 0;
+  left:0;
+  width:100%;
+  height:90rpx;
+  background-color: #fff;
+  display: flex;
+}
+.all_chk_wrap{
+  flex:2;
+  display:flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.delete_wrap{
+  flex:1;
+  padding-left: 15rpx;
+  display: flex;
+  align-items: center;
+}
+.total_price_wrap{
+  display:flex;
+  justify-content:flex-end;
+  align-items: center;
+  padding-right: 15rpx;
+  flex:4.5;
+  text-align: right;
+}
+.total_price_text{
+  color: red;
+  font-size: 35rpx;
+}
+.order_pay_wrap{
+  flex:2;
+  background-color: #e0434e;
+  color:white;
+  font-size:32rpx;
+  font-weight:600;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,53 @@
+<!--pages/cart/cart.wxml-->
+<view class="containercart">
+  <!-- 购物车结构 -->
+  <view class="goods" wx:for="{{goodsList}}" wx:key="goods_id">
+    <!-- 复选框 -->
+    <view class="cart_chk_wrap">
+      <checkbox-group bindchange="selectGoods"data-index="{{index}}">
+        <checkbox checked="{{checkedList[index]}}"/>
+      </checkbox-group>
+    </view>
+    <!-- 商品图片 -->
+    <image class="goods_pic" src="{{item.imagePath}}" mode="widthFix" />
+    <!-- 商品信息 -->
+    <view class="message">
+      <view class="name">
+        <view>{{item.good_name}}</view>
+      </view>
+      <view class="fashion">
+        <view>{{item.fashion}}</view>
+        <image class="left_image" src="/images/减.png" bind:tap="sub" data-index="{{index}}" />
+        <view class="buy_num">{{item.buy_num}}</view>
+        <image class="right_image" src="/images/加.png" bind:tap="add" data-index="{{index}}" />
+      </view>
+      <view class="price">
+        <view>￥{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部工具栏 -->
+  <view class="footer_tool">
+    <!-- 全选 -->
+    <view class="all_chk_wrap">
+      <view>
+        <checkbox-group bindchange="select_all" >
+          <checkbox checked="{{SelectAll}}"/>全选
+        </checkbox-group>
+      </view>
+
+    </view>
+    <!-- 删除 -->
+    <view class="delete_wrap" bind:tap="delete_goods"><view >删除</view></view>
+    <!-- 总价格 -->
+    <view class="total_price_wrap">
+      <view class="total_price">
+        合计: <text class="total_price_text">￥{{total_price}}</text>
+      </view>
+    </view>
+    <!-- 结算 -->
+    <view class="order_pay_wrap" bind:tap="addToStorage">
+    结算({{TotalSum}})
+    </view>
+  </view>
+</view>
